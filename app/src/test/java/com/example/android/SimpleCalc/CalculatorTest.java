@@ -16,7 +16,7 @@
 
 package com.example.android.SimpleCalc;
 
-import android.test.suitebuilder.annotation.SmallTest;
+import androidx.test.filters.SmallTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -52,7 +52,6 @@ public class CalculatorTest {
         double resultAdd = mCalculator.add(1d, 1d);
         assertThat(resultAdd, is(equalTo(2d)));
     }
-
 
 
 }
