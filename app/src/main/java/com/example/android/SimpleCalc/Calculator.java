@@ -16,10 +16,16 @@
 
 package com.example.android.SimpleCalc;
 
+import javax.inject.Inject;
+
 /**
  * Utility class for SimpleCalc to perform the actual calculations.
  */
 public class Calculator {
+
+    @Inject
+    public Calculator() {
+    }
 
     // Available operations
     public enum Operator {ADD, SUB, DIV, MUL}

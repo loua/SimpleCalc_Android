@@ -23,6 +23,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
 /**
  * SimpleCalc is the initial version of SimpleCalcTest.  It has
  * a number of intentional oversights for the student to debug/fix,
@@ -42,13 +44,20 @@ public class MainActivity extends Activity {
 
     private TextView mResultTextView;
 
+    @Inject
+    public void setCalculator(Calculator mCalculator) {
+        this.mCalculator = mCalculator;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // Initialize the calculator class and all the views
-        mCalculator = new Calculator();
+//        mCalculator = new Calculator();
+        ((SimpleCalcApp) getApplicationContext()).appComponent.inject(this);
+
         mResultTextView = findViewById(R.id.operation_result_text_view);
         mOperandOneEditText = findViewById(R.id.operand_one_edit_text);
         mOperandTwoEditText = findViewById(R.id.operand_two_edit_text);
