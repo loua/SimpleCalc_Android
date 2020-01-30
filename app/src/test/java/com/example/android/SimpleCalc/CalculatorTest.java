@@ -16,7 +16,6 @@
 
 package com.example.android.SimpleCalc;
 
-import android.test.suitebuilder.annotation.SmallTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +30,6 @@ import static org.junit.Assert.assertThat;
  * JUnit4 unit tests for the calculator logic. These are local unit tests; no device needed
  */
 @RunWith(JUnit4.class)
-@SmallTest
 public class CalculatorTest {
 
     private Calculator mCalculator;
