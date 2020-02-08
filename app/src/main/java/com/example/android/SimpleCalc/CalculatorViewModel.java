@@ -1,12 +1,8 @@
 package com.example.android.simplecalc;
 
-import android.util.Log;
-
 import androidx.lifecycle.ViewModel;
 
 public class CalculatorViewModel extends ViewModel {
-    private static final String TAG = "CalculatorViewModel";
-
     private String operandOne = "";
     private String operandTwo = "";
     private Calculator calc;
@@ -24,14 +20,12 @@ public class CalculatorViewModel extends ViewModel {
     }
 
     public String compute(Calculator.Operator operator) {
-        Log.d("TAG", operator + " " + operandOne + ", " + operandTwo);
         double opOne;
         double opTwo;
         try {
             opOne = Double.valueOf(operandOne);
             opTwo = Double.valueOf(operandTwo);
         } catch (NumberFormatException nfe) {
-            Log.e(TAG, "NumberFormatException", nfe);
             throw nfe;
         }
 

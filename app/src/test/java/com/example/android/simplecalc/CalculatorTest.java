@@ -90,10 +90,9 @@ public class CalculatorTest {
         assertThat(resultDiv, is(equalTo(16d)));
     }
 
-    @Test
-    public void divTwoNumbersZero() {
-        double resultDiv = mCalculator.div(32d, 0);
-        assertThat(resultDiv, is(equalTo(Double.POSITIVE_INFINITY)));
+    @Test(expected = IllegalArgumentException.class)
+    public void divByZeroThrows() {
+        mCalculator.div(32d, 0);
     }
 
 }
